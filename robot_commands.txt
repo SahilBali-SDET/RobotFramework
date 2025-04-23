@@ -1,0 +1,5 @@
+Parallel execution command:
+pabot --processes 3 -i OrangeHRMSuite -d TestResults/OrangeHRMParallel --variable HEADLESS:False TestSuites
+
+Robot execution command:
+robot -i OrangeHRMSuite -d TestResults/OrangeHRMParallel --variable HEADLESS:False TestSuites
