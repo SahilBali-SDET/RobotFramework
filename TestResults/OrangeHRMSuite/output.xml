@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.9.13 on win32)" generated="2025-04-21T18:59:12.275721" rpa="false" schemaversion="5">
+<suite id="s1" name="TestSuites" source="D:\Robot_Framework_Dummy\TestSuites">
+<suite id="s1-s1" name="Admin-Tests" source="D:\Robot_Framework_Dummy\TestSuites\Admin-Tests.robot">
+<kw name="Login And Navigate To Admin" type="SETUP">
+<kw name="Open Browser With Config" owner="ResourceLib">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-04-21T18:59:12.569974" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001E32312EA90&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-04-21T18:59:12.569974" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${headless}'=='True'</arg>
+<arg>Call Method</arg>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-04-21T18:59:12.569974" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-04-21T18:59:12.569974" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-04-21T18:59:12.569974" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:12.569974" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER_NAME}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-04-21T18:59:12.569974" elapsed="4.523604"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-04-21T18:59:17.093578" elapsed="0.023442"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>2s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-04-21T18:59:17.117020" elapsed="0.001024"/>
+</kw>
+<status status="PASS" start="2025-04-21T18:59:12.569974" elapsed="4.548070"/>
+</kw>
+<kw name="Login With Credentials" owner="LoginPageLib">
+<kw name="Enter Username" owner="LoginPageLib">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:17.120020" level="INFO">Typing text 'admin' into text field 'css:input[name='username']'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-21T18:59:17.119039" elapsed="0.644840"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2025-04-21T18:59:17.119039" elapsed="0.644840"/>
+</kw>
+<kw name="Enter Password" owner="LoginPageLib">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:17.763879" level="INFO">Typing text 'admin123' into text field 'css:input[name='password']'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-21T18:59:17.763879" elapsed="0.068832"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-04-21T18:59:17.763879" elapsed="0.068832"/>
+</kw>
+<kw name="Click Login Button" owner="LoginPageLib">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:17.832711" level="INFO">Clicking button 'css:button[type='submit']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-21T18:59:17.832711" elapsed="0.056766"/>
+</kw>
+<status status="PASS" start="2025-04-21T18:59:17.832711" elapsed="0.056766"/>
+</kw>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2025-04-21T18:59:17.119039" elapsed="0.770438"/>
+</kw>
+<kw name="Verify OrangeHRM Page Is Loaded" owner="OrangeHRMPageLib">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ORANGEHRM_LOGO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-21T18:59:17.889477" elapsed="1.695134"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${NAVIGATION_PANEL}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-21T18:59:19.585612" elapsed="0.011647"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:19.612894" level="INFO">${title} = Cockpit</msg>
+<var>${title}</var>
+<arg>${HEADER_TITLE}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-21T18:59:19.597259" elapsed="0.015635"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>Cockpit</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-04-21T18:59:19.612894" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-21T18:59:17.889477" elapsed="1.723417"/>
+</kw>
+<kw name="Search And Click Navigation Item" owner="OrangeHRMPageLib">
+<kw name="Search Navigation Item" owner="OrangeHRMPageLib">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:19.612894" level="INFO">Typing text 'Admin' into text field 'css:.oxd-main-menu-search input'.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>${menu_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-21T18:59:19.612894" elapsed="0.062493"/>
+</kw>
+<arg>${menu_name}</arg>
+<status status="PASS" start="2025-04-21T18:59:19.612894" elapsed="0.062493"/>
+</kw>
+<kw name="Navigate To Menu" owner="OrangeHRMPageLib">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:19.682636" level="INFO">${menu_items} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="4ebdce58b714ed0445c8131b40024a85", element="f.DD600A27B7E9FEA1EABCCF0BEEACFFD3.d.0E76A08328E96262AE06F479225AE567.e.32")&gt;]</msg>
+<var>${menu_items}</var>
+<arg>${MENU_ITEMS}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-04-21T18:59:19.675387" elapsed="0.007249"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:19.698264" level="INFO">${item_text} = Admin</msg>
+<var>${item_text}</var>
+<arg>xpath=.//span</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-21T18:59:19.682636" elapsed="0.015628"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:19.698264" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="4ebdce58b714ed0445c8131b40024a85", element="f.DD600A27B7E9FEA1EABCCF0BEEACFFD3.d.0E76A08328E96262AE06F479225AE567.e.32")&gt;'.</msg>
+<arg>${item}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-21T18:59:19.698264" elapsed="1.016291"/>
+</kw>
+<arg>'${item_text}' == '${menu_name}'</arg>
+<arg>Click Element</arg>
+<arg>${item}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-04-21T18:59:19.698264" elapsed="1.016291"/>
+</kw>
+<kw name="Exit For Loop If" owner="BuiltIn">
+<msg time="2025-04-21T18:59:20.715562" level="INFO">Exiting for loop altogether.</msg>
+<arg>'${item_text}' == '${menu_name}'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" start="2025-04-21T18:59:20.714555" elapsed="0.001007"/>
+</kw>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4ebdce58b714ed0445c8131b40024a85", element="f.DD600A27B7E9FEA1EABCCF0BEEACFFD3.d.0E76A08328E96262AE06F479225AE567.e.32")&gt;</var>
+<status status="PASS" start="2025-04-21T18:59:19.682636" elapsed="1.032926"/>
+</iter>
+<var>${item}</var>
+<value>@{menu_items}</value>
+<status status="PASS" start="2025-04-21T18:59:19.682636" elapsed="1.032926"/>
+</for>
+<arg>${menu_name}</arg>
+<status status="PASS" start="2025-04-21T18:59:19.675387" elapsed="1.040175"/>
+</kw>
+<arg>Admin</arg>
+<status status="PASS" start="2025-04-21T18:59:19.612894" elapsed="1.102668"/>
+</kw>
+<kw name="Verify Admin Page Is Loaded" owner="AdminPageLib">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:22.878764" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-04-21T18:59:22.878764" level="FAIL">Element with locator 'xpath://h5[text()='System Users']' not found.</msg>
+<arg>${SYSTEM_USERS_HEADER}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-04-21T18:59:20.715562" elapsed="2.178729">Element with locator 'xpath://h5[text()='System Users']' not found.</status>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-04-21T18:59:22.894291" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<arg>${EMPLOYEE_NAME_FIELD}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-04-21T18:59:22.894291" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<arg>${USER_ROLE_FIELD}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-04-21T18:59:22.894291" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<arg>${STATUS_FIELD}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-04-21T18:59:22.894291" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<arg>${RESET_BUTTON}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-04-21T18:59:22.894291" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_BUTTON}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-04-21T18:59:22.894291" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<arg>${ADD_BUTTON}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-04-21T18:59:22.894291" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-04-21T18:59:20.715562" elapsed="2.178729">Element with locator 'xpath://h5[text()='System Users']' not found.</status>
+</kw>
+<status status="FAIL" start="2025-04-21T18:59:12.569974" elapsed="10.327488">Element with locator 'xpath://h5[text()='System Users']' not found.</status>
+</kw>
+<test id="s1-s1-t1" name="Verify Records Are Updated With Correct Details" line="26">
+<tag>AdminPageTest</tag>
+<tag>OrangeHRMSuite</tag>
+<status status="FAIL" start="2025-04-21T18:59:22.897462" elapsed="0.000000">Parent suite setup failed:
+Element with locator 'xpath://h5[text()='System Users']' not found.</status>
+</test>
+<test id="s1-s1-t2" name="Verify Records Are Empty If No Records Are Present" line="31">
+<tag>AdminPageTest</tag>
+<tag>OrangeHRMSuite</tag>
+<status status="FAIL" start="2025-04-21T18:59:22.899481" elapsed="0.000981">Parent suite setup failed:
+Element with locator 'xpath://h5[text()='System Users']' not found.</status>
+</test>
+<kw name="Close Browser Session" owner="ResourceLib" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-04-21T18:59:22.903484" elapsed="2.131689"/>
+</kw>
+<status status="PASS" start="2025-04-21T18:59:22.902518" elapsed="2.132655"/>
+</kw>
+<status status="FAIL" start="2025-04-21T18:59:12.291186" elapsed="12.743987">Suite setup failed:
+Element with locator 'xpath://h5[text()='System Users']' not found.</status>
+</suite>
+<suite id="s1-s2" name="Login-Tests" source="D:\Robot_Framework_Dummy\TestSuites\Login-Tests.robot">
+<kw name="Open Browser With Config" owner="ResourceLib" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-04-21T18:59:25.050111" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001E323A05F70&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-04-21T18:59:25.035173" elapsed="0.014938"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${headless}'=='True'</arg>
+<arg>Call Method</arg>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-04-21T18:59:25.050111" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-04-21T18:59:25.050111" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-04-21T18:59:25.050111" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:25.051120" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER_NAME}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-04-21T18:59:25.050111" elapsed="4.461720"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-04-21T18:59:29.511831" elapsed="0.021784"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>2s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-04-21T18:59:29.533615" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-21T18:59:25.035173" elapsed="4.498442"/>
+</kw>
+<test id="s1-s2-t1" name="Verify Valid Login" line="11">
+<kw name="Login With Credentials" owner="LoginPageLib">
+<kw name="Enter Username" owner="LoginPageLib">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:29.533615" level="INFO">Typing text 'admin' into text field 'css:input[name='username']'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-21T18:59:29.533615" elapsed="0.613899"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2025-04-21T18:59:29.533615" elapsed="0.613899"/>
+</kw>
+<kw name="Enter Password" owner="LoginPageLib">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:30.147514" level="INFO">Typing text 'admin123' into text field 'css:input[name='password']'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-21T18:59:30.147514" elapsed="0.072690"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-04-21T18:59:30.147514" elapsed="0.072690"/>
+</kw>
+<kw name="Click Login Button" owner="LoginPageLib">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:30.221207" level="INFO">Clicking button 'css:button[type='submit']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-21T18:59:30.221207" elapsed="0.059182"/>
+</kw>
+<status status="PASS" start="2025-04-21T18:59:30.221207" elapsed="0.059182"/>
+</kw>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2025-04-21T18:59:29.533615" elapsed="0.746774"/>
+</kw>
+<kw name="Verify OrangeHRM Page Is Loaded" owner="OrangeHRMPageLib">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ORANGEHRM_LOGO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-21T18:59:30.281468" elapsed="1.758387"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${NAVIGATION_PANEL}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-21T18:59:32.039855" elapsed="0.008715"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:32.064197" level="INFO">${title} = Cockpit</msg>
+<var>${title}</var>
+<arg>${HEADER_TITLE}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-21T18:59:32.048570" elapsed="0.015627"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>Cockpit</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-04-21T18:59:32.064197" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-21T18:59:30.280923" elapsed="1.783274"/>
+</kw>
+<kw name="Logout" owner="OrangeHRMPageLib">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:32.064197" level="INFO">Clicking element 'css:.oxd-userdropdown-tab'.</msg>
+<arg>${USER_DROPDOWN_TAB}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-21T18:59:32.064197" elapsed="0.050679"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:32.135125" level="INFO">${items} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="d924208c0356643a1dc123de50a28360", element="f.8C97CCC86427FD4A12BF7CA41160348F.d.15EC6DC79207B6F036FBC12C74D6597A.e.33")&gt;, &lt;selenium.webdriv...</msg>
+<var>${items}</var>
+<arg>${DROPDOWN_MENU_ITEMS}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-04-21T18:59:32.114876" elapsed="0.020249"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:32.143126" level="INFO">${text} = </msg>
+<var>${text}</var>
+<arg>${item}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-21T18:59:32.136145" elapsed="0.006981"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'Logout'</arg>
+<arg>Click Element</arg>
+<arg>${item}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-04-21T18:59:32.143126" elapsed="0.000000"/>
+</kw>
+<kw name="Exit For Loop If" owner="BuiltIn">
+<arg>'${text}' == 'Logout'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" start="2025-04-21T18:59:32.143126" elapsed="0.000998"/>
+</kw>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d924208c0356643a1dc123de50a28360", element="f.8C97CCC86427FD4A12BF7CA41160348F.d.15EC6DC79207B6F036FBC12C74D6597A.e.33")&gt;</var>
+<status status="PASS" start="2025-04-21T18:59:32.136145" elapsed="0.007979"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:32.152196" level="INFO">${text} = </msg>
+<var>${text}</var>
+<arg>${item}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-21T18:59:32.144124" elapsed="0.009078"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'Logout'</arg>
+<arg>Click Element</arg>
+<arg>${item}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-04-21T18:59:32.153202" elapsed="0.000000"/>
+</kw>
+<kw name="Exit For Loop If" owner="BuiltIn">
+<arg>'${text}' == 'Logout'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" start="2025-04-21T18:59:32.153202" elapsed="0.000997"/>
+</kw>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d924208c0356643a1dc123de50a28360", element="f.8C97CCC86427FD4A12BF7CA41160348F.d.15EC6DC79207B6F036FBC12C74D6597A.e.34")&gt;</var>
+<status status="PASS" start="2025-04-21T18:59:32.144124" elapsed="0.010075"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:32.161195" level="INFO">${text} = </msg>
+<var>${text}</var>
+<arg>${item}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-21T18:59:32.154199" elapsed="0.006996"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'Logout'</arg>
+<arg>Click Element</arg>
+<arg>${item}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-04-21T18:59:32.161195" elapsed="0.000000"/>
+</kw>
+<kw name="Exit For Loop If" owner="BuiltIn">
+<arg>'${text}' == 'Logout'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" start="2025-04-21T18:59:32.162213" elapsed="0.000000"/>
+</kw>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d924208c0356643a1dc123de50a28360", element="f.8C97CCC86427FD4A12BF7CA41160348F.d.15EC6DC79207B6F036FBC12C74D6597A.e.35")&gt;</var>
+<status status="PASS" start="2025-04-21T18:59:32.154199" elapsed="0.008014"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:32.166576" level="INFO">${text} = </msg>
+<var>${text}</var>
+<arg>${item}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-21T18:59:32.162213" elapsed="0.004363"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'Logout'</arg>
+<arg>Click Element</arg>
+<arg>${item}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-04-21T18:59:32.166576" elapsed="0.000000"/>
+</kw>
+<kw name="Exit For Loop If" owner="BuiltIn">
+<arg>'${text}' == 'Logout'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" start="2025-04-21T18:59:32.166576" elapsed="0.000000"/>
+</kw>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d924208c0356643a1dc123de50a28360", element="f.8C97CCC86427FD4A12BF7CA41160348F.d.15EC6DC79207B6F036FBC12C74D6597A.e.36")&gt;</var>
+<status status="PASS" start="2025-04-21T18:59:32.162213" elapsed="0.004363"/>
+</iter>
+<var>${item}</var>
+<value>@{items}</value>
+<status status="PASS" start="2025-04-21T18:59:32.135125" elapsed="0.031451"/>
+</for>
+<status status="PASS" start="2025-04-21T18:59:32.064197" elapsed="0.102379"/>
+</kw>
+<tag>LoginTest</tag>
+<tag>OrangeHRMSuite</tag>
+<status status="PASS" start="2025-04-21T18:59:29.533615" elapsed="2.632961"/>
+</test>
+<test id="s1-s2-t2" name="Verify Invalid Login" line="17">
+<kw name="Login With Credentials" owner="LoginPageLib">
+<kw name="Enter Username" owner="LoginPageLib">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:32.166576" level="INFO">Typing text 'random@gmail.com' into text field 'css:input[name='username']'.</msg>
+<msg time="2025-04-21T18:59:34.367257" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-04-21T18:59:34.368257" level="FAIL">Element with locator 'css:input[name='username']' not found.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2025-04-21T18:59:32.166576" elapsed="2.202679">Element with locator 'css:input[name='username']' not found.</status>
+</kw>
+<arg>${username}</arg>
+<status status="FAIL" start="2025-04-21T18:59:32.166576" elapsed="2.202679">Element with locator 'css:input[name='username']' not found.</status>
+</kw>
+<kw name="Enter Password" owner="LoginPageLib">
+<arg>${password}</arg>
+<status status="NOT RUN" start="2025-04-21T18:59:34.369255" elapsed="0.000000"/>
+</kw>
+<kw name="Click Login Button" owner="LoginPageLib">
+<status status="NOT RUN" start="2025-04-21T18:59:34.369255" elapsed="0.000000"/>
+</kw>
+<arg>random@gmail.com</arg>
+<arg>test</arg>
+<status status="FAIL" start="2025-04-21T18:59:32.166576" elapsed="2.202679">Element with locator 'css:input[name='username']' not found.</status>
+</kw>
+<kw name="Verify Invalid Credentials Message Is Displayed" owner="LoginPageLib">
+<status status="NOT RUN" start="2025-04-21T18:59:34.369255" elapsed="0.000000"/>
+</kw>
+<tag>LoginTest</tag>
+<tag>OrangeHRMSuite</tag>
+<status status="FAIL" start="2025-04-21T18:59:32.166576" elapsed="2.203681">Element with locator 'css:input[name='username']' not found.</status>
+</test>
+<kw name="Close Browser Session" owner="ResourceLib" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-04-21T18:59:34.371255" elapsed="2.258651"/>
+</kw>
+<status status="PASS" start="2025-04-21T18:59:34.371255" elapsed="2.258651"/>
+</kw>
+<status status="FAIL" start="2025-04-21T18:59:25.035173" elapsed="11.594733"/>
+</suite>
+<suite id="s1-s3" name="MyInfo-Tests" source="D:\Robot_Framework_Dummy\TestSuites\MyInfo-Tests.robot">
+<kw name="Login And Navigate To My Info" type="SETUP">
+<kw name="Open Browser With Config" owner="ResourceLib">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-04-21T18:59:36.662050" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001E323A89400&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-04-21T18:59:36.662050" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${headless}'=='True'</arg>
+<arg>Call Method</arg>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-04-21T18:59:36.662050" elapsed="0.000998"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-04-21T18:59:36.663048" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-04-21T18:59:36.663048" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:36.663048" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER_NAME}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-04-21T18:59:36.663048" elapsed="4.364937"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-04-21T18:59:41.029051" elapsed="0.021755"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>2s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-04-21T18:59:41.050806" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-21T18:59:36.662050" elapsed="4.388756"/>
+</kw>
+<kw name="Login With Credentials" owner="LoginPageLib">
+<kw name="Enter Username" owner="LoginPageLib">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:41.050806" level="INFO">Typing text 'admin' into text field 'css:input[name='username']'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-21T18:59:41.050806" elapsed="0.597984"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2025-04-21T18:59:41.050806" elapsed="0.597984"/>
+</kw>
+<kw name="Enter Password" owner="LoginPageLib">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:41.648790" level="INFO">Typing text 'admin123' into text field 'css:input[name='password']'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-21T18:59:41.648790" elapsed="0.073615"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-04-21T18:59:41.648790" elapsed="0.073615"/>
+</kw>
+<kw name="Click Login Button" owner="LoginPageLib">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:41.723413" level="INFO">Clicking button 'css:button[type='submit']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-21T18:59:41.723413" elapsed="0.056261"/>
+</kw>
+<status status="PASS" start="2025-04-21T18:59:41.723413" elapsed="0.057263"/>
+</kw>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2025-04-21T18:59:41.050806" elapsed="0.729870"/>
+</kw>
+<kw name="Verify OrangeHRM Page Is Loaded" owner="OrangeHRMPageLib">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ORANGEHRM_LOGO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-21T18:59:41.781239" elapsed="1.700270"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${NAVIGATION_PANEL}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-21T18:59:43.481509" elapsed="0.031299"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:43.530060" level="INFO">${title} = Cockpit</msg>
+<var>${title}</var>
+<arg>${HEADER_TITLE}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-21T18:59:43.513827" elapsed="0.016233"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>Cockpit</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-04-21T18:59:43.530060" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-21T18:59:41.780676" elapsed="1.749384"/>
+</kw>
+<kw name="Search And Click Navigation Item" owner="OrangeHRMPageLib">
+<kw name="Search Navigation Item" owner="OrangeHRMPageLib">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:43.530060" level="INFO">Typing text 'My Info' into text field 'css:.oxd-main-menu-search input'.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>${menu_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-21T18:59:43.530060" elapsed="0.062506"/>
+</kw>
+<arg>${menu_name}</arg>
+<status status="PASS" start="2025-04-21T18:59:43.530060" elapsed="0.062506"/>
+</kw>
+<kw name="Navigate To Menu" owner="OrangeHRMPageLib">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:45.634750" level="INFO">${menu_items} = []</msg>
+<var>${menu_items}</var>
+<arg>${MENU_ITEMS}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-04-21T18:59:43.592566" elapsed="2.042184"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${item_text}</var>
+<arg>xpath=.//span</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-04-21T18:59:45.634750" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${item_text}' == '${menu_name}'</arg>
+<arg>Click Element</arg>
+<arg>${item}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-04-21T18:59:45.634750" elapsed="0.000000"/>
+</kw>
+<kw name="Exit For Loop If" owner="BuiltIn">
+<arg>'${item_text}' == '${menu_name}'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-04-21T18:59:45.634750" elapsed="0.000000"/>
+</kw>
+<var name="${item}"/>
+<status status="NOT RUN" start="2025-04-21T18:59:45.634750" elapsed="0.000000"/>
+</iter>
+<var>${item}</var>
+<value>@{menu_items}</value>
+<status status="NOT RUN" start="2025-04-21T18:59:45.634750" elapsed="0.000000"/>
+</for>
+<arg>${menu_name}</arg>
+<status status="PASS" start="2025-04-21T18:59:43.592566" elapsed="2.042184"/>
+</kw>
+<arg>My Info</arg>
+<status status="PASS" start="2025-04-21T18:59:43.530060" elapsed="2.104690"/>
+</kw>
+<kw name="Verify My Info Page Is Loaded" owner="MyInfoPageLib">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-04-21T18:59:47.780590" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-04-21T18:59:47.780590" level="FAIL">Element with locator 'css:.orangehrm-edit-employee' not found.</msg>
+<arg>${EDIT_EMPLOYEE_SECTION}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-04-21T18:59:45.634750" elapsed="2.145840">Element with locator 'css:.orangehrm-edit-employee' not found.</status>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${ATTACHMENT_LOADER}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="NOT RUN" start="2025-04-21T18:59:47.780590" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-04-21T18:59:45.634750" elapsed="2.145840">Element with locator 'css:.orangehrm-edit-employee' not found.</status>
+</kw>
+<status status="FAIL" start="2025-04-21T18:59:36.661048" elapsed="11.119542">Element with locator 'css:.orangehrm-edit-employee' not found.</status>
+</kw>
+<test id="s1-s3-t1" name="Verify User Is Able To Upload File" line="27">
+<tag>MyInfoTest</tag>
+<tag>OrangeHRMSuite</tag>
+<status status="FAIL" start="2025-04-21T18:59:47.780590" elapsed="0.000000">Parent suite setup failed:
+Element with locator 'css:.orangehrm-edit-employee' not found.</status>
+</test>
+<test id="s1-s3-t2" name="Verify User Is Able To Delete File" line="32">
+<tag>MyInfoTest</tag>
+<tag>OrangeHRMSuite</tag>
+<status status="FAIL" start="2025-04-21T18:59:47.780590" elapsed="0.000000">Parent suite setup failed:
+Element with locator 'css:.orangehrm-edit-employee' not found.</status>
+</test>
+<kw name="Close Browser Session" owner="ResourceLib" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-04-21T18:59:47.796126" elapsed="3.299253"/>
+</kw>
+<status status="PASS" start="2025-04-21T18:59:47.796126" elapsed="3.299253"/>
+</kw>
+<status status="FAIL" start="2025-04-21T18:59:36.629906" elapsed="14.465473">Suite setup failed:
+Element with locator 'css:.orangehrm-edit-employee' not found.</status>
+</suite>
+<status status="FAIL" start="2025-04-21T18:59:12.275721" elapsed="38.819658"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="5" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="2" skip="0">AdminPageTest</stat>
+<stat pass="1" fail="1" skip="0">LoginTest</stat>
+<stat pass="0" fail="2" skip="0">MyInfoTest</stat>
+<stat pass="1" fail="5" skip="0">OrangeHRMSuite</stat>
+</tag>
+<suite>
+<stat name="TestSuites" id="s1" pass="1" fail="5" skip="0">TestSuites</stat>
+<stat name="Admin-Tests" id="s1-s1" pass="0" fail="2" skip="0">TestSuites.Admin-Tests</stat>
+<stat name="Login-Tests" id="s1-s2" pass="1" fail="1" skip="0">TestSuites.Login-Tests</stat>
+<stat name="MyInfo-Tests" id="s1-s3" pass="0" fail="2" skip="0">TestSuites.MyInfo-Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

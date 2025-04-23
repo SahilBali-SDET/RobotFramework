@@ -1,0 +1,16 @@
+==============================================================================
+TestSuites                                                                    
+==============================================================================
+TestSuites.Admin-Tests                                                        
+==============================================================================
+Verify Records Are Updated With Correct Details                       | PASS |
+------------------------------------------------------------------------------
+Verify Records Are Empty If No Records Are Present                    | PASS |
+------------------------------------------------------------------------------
+TestSuites.Admin-Tests                                                | PASS |
+2 tests, 2 passed, 0 failed
+==============================================================================
+TestSuites                                                            | PASS |
+2 tests, 2 passed, 0 failed
+==============================================================================
+Output:  F:\Robot_Framework\TestResults\OrangeHRMParallel\pabot_results\0\output.xml

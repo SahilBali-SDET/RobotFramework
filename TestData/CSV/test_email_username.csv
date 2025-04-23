@@ -1,0 +1,2 @@
+id,last_login,is_superuser,username,first_name,last_name,email,is_staff,is_active,date_joined,title,work_areas,primary_work_area,permission_level,phone_number,hospitals,primary_hospital,groups,is_qventoid,user_profile,identity_map,emr_user_id,password,user_permissions
+,,0,eng_19457_2,Test,ENG19457_2,eng_19457_2@qventus.com,0,0,2022-06-10 00:00:00,,Operating Room,Operating Room,0,415-818-9506,"Saint Abigail,Meta Hospital,Saint Concetta",Saint Concetta,qa_mob_group,False,8672,{},,,

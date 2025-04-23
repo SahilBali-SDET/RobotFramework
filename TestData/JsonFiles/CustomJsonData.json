@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "version": "1.2",
+    "timestamp": "2025-04-23T10:55:00Z",
+    "source": "data-aggregator-v5"
+  },
+  "userProfile": {
+    "userId": "user789",
+    "username": "data_maven",
+    "email": "data@example.org",
+    "preferences": {
+      "language": "en-US",
+      "theme": "dark",
+      "notifications": {
+        "email": true,
+        "sms": false
+      }
+    },
+    "lastLogin": "2025-04-22T20:30:15Z"
+  },
+  "dataSets": [
+    {
+      "dataSetId": "DS001",
+      "name": "Customer Transactions",
+      "description": "Aggregated customer purchase data",
+      "recordCount": 1250,
+      "fields": [
+        {"fieldName": "transactionId", "dataType": "string", "isPrimaryKey": true},
+        {"fieldName": "customerId", "dataType": "string"},
+        {"fieldName": "purchaseDate", "dataType": "date"},
+        {"fieldName": "amount", "dataType": "number"},
+        {"fieldName": "productCategory", "dataType": "string"}
+      ],
+      "tags": ["sales", "transactions", "customer"]
+    },
+    {
+      "dataSetId": "DS002",
+      "name": "Website Analytics",
+      "description": "User activity on the company website",
+      "recordCount": 5800,
+      "fields": [
+        {"fieldName": "sessionId", "dataType": "string", "isPrimaryKey": true},
+        {"fieldName": "userId", "dataType": "string"},
+        {"fieldName": "pageView", "dataType": "string"},
+        {"fieldName": "durationSeconds", "dataType": "number"},
+        {"fieldName": "device", "dataType": "string"}
+      ],
+      "tags": ["analytics", "web", "usage"]
+    }
+  ],
+  "processingStatus": {
+    "overallStatus": "completed",
+    "lastProcessedRecordId": "TRANS-1249",
+    "errors": []
+  }
+}

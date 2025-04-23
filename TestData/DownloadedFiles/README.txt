@@ -1,0 +1,1 @@
+This is a 'download' folder to test downloaded files and delete them after verification

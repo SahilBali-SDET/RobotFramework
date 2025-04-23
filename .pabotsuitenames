@@ -1,0 +1,7 @@
+datasources:7dbfe111839f65acd083897c89423ab9f3aaf6a9
+commandlineoptions:2bad89e19dc73b1b1e7446b4434baae98d434fdf
+suitesfrom:no-suites-from-option
+file:6d7669080d5fb2f139985e2c5b13361b4c697e5d
+--suite TestSuites.Admin-Tests
+--suite TestSuites.Login-Tests
+--suite TestSuites.MyInfo-Tests

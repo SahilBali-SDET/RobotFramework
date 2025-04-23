@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.9 on win32)" generated="2025-04-23T10:50:53.182411" rpa="false" schemaversion="5">
+<suite id="s1" name="TestSuites" source="F:\Robot_Framework\TestSuites">
+<suite id="s1-s1" name="Login-Tests" source="F:\Robot_Framework\TestSuites\Login-Tests.robot">
+<kw name="Open Browser With Config" owner="ResourceLib" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-04-23T10:50:53.349745" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000020ABDAD61B0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-04-23T10:50:53.349745" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${HEADLESS}'=='True'</arg>
+<arg>Call Method</arg>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-04-23T10:50:53.349745" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-04-23T10:50:53.349745" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-04-23T10:50:53.349745" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-04-23T10:50:53.349745" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER_NAME}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-04-23T10:50:53.349745" elapsed="3.578828"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-04-23T10:50:56.928573" elapsed="2.201280"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>2s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-04-23T10:50:59.129853" elapsed="0.001051"/>
+</kw>
+<status status="PASS" start="2025-04-23T10:50:53.349745" elapsed="5.781159"/>
+</kw>
+<test id="s1-s1-t1" name="Verify Valid Login" line="11">
+<kw name="Login With Credentials" owner="LoginPageLib">
+<kw name="Enter Username" owner="LoginPageLib">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-23T10:50:59.132982" level="INFO">Typing text 'admin' into text field 'css:input[name='username']'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-23T10:50:59.131907" elapsed="0.432249"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2025-04-23T10:50:59.131907" elapsed="0.432249"/>
+</kw>
+<kw name="Enter Password" owner="LoginPageLib">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-23T10:50:59.564156" level="INFO">Typing text 'admin123' into text field 'css:input[name='password']'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-23T10:50:59.564156" elapsed="0.034961"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-04-23T10:50:59.564156" elapsed="0.034961"/>
+</kw>
+<kw name="Click Login Button" owner="LoginPageLib">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-04-23T10:50:59.599117" level="INFO">Clicking button 'css:button[type='submit']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-23T10:50:59.599117" elapsed="0.058684"/>
+</kw>
+<status status="PASS" start="2025-04-23T10:50:59.599117" elapsed="0.058684"/>
+</kw>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2025-04-23T10:50:59.131907" elapsed="0.525894"/>
+</kw>
+<kw name="Verify OrangeHRM Page Is Loaded" owner="OrangeHRMPageLib">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ORANGEHRM_LOGO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-23T10:50:59.659129" elapsed="1.571452"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${NAVIGATION_PANEL}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-23T10:51:01.230581" elapsed="0.010474"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-04-23T10:51:01.256320" level="INFO">${title} = Dashboard</msg>
+<var>${title}</var>
+<arg>${HEADER_TITLE}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-23T10:51:01.242328" elapsed="0.013992"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>Dashboard</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-04-23T10:51:01.256320" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-23T10:50:59.657801" elapsed="1.598519"/>
+</kw>
+<kw name="Logout" owner="OrangeHRMPageLib">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-23T10:51:01.257750" level="INFO">Clicking element 'css:.oxd-userdropdown-tab'.</msg>
+<arg>${USER_DROPDOWN_TAB}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-23T10:51:01.257750" elapsed="0.041568"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-04-23T10:51:01.299318" level="INFO">Clicking link 'Logout'.</msg>
+<arg>Logout</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-23T10:51:01.299318" elapsed="1.939922"/>
+</kw>
+<status status="PASS" start="2025-04-23T10:51:01.256320" elapsed="1.982920"/>
+</kw>
+<tag>LoginTest</tag>
+<tag>OrangeHRMSuite</tag>
+<status status="PASS" start="2025-04-23T10:50:59.130904" elapsed="4.108336"/>
+</test>
+<test id="s1-s1-t2" name="Verify Invalid Login" line="17">
+<kw name="Login With Credentials" owner="LoginPageLib">
+<kw name="Enter Username" owner="LoginPageLib">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-23T10:51:03.240460" level="INFO">Typing text 'random@gmail.com' into text field 'css:input[name='username']'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-23T10:51:03.240460" elapsed="0.373391"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2025-04-23T10:51:03.240460" elapsed="0.373391"/>
+</kw>
+<kw name="Enter Password" owner="LoginPageLib">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-23T10:51:03.616277" level="INFO">Typing text 'test' into text field 'css:input[name='password']'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-23T10:51:03.613851" elapsed="0.035306"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-04-23T10:51:03.613851" elapsed="0.035306"/>
+</kw>
+<kw name="Click Login Button" owner="LoginPageLib">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-04-23T10:51:03.649157" level="INFO">Clicking button 'css:button[type='submit']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-23T10:51:03.649157" elapsed="0.032990"/>
+</kw>
+<status status="PASS" start="2025-04-23T10:51:03.649157" elapsed="0.032990"/>
+</kw>
+<arg>random@gmail.com</arg>
+<arg>test</arg>
+<status status="PASS" start="2025-04-23T10:51:03.240460" elapsed="0.441687"/>
+</kw>
+<kw name="Verify Invalid Credentials Message Is Displayed" owner="LoginPageLib">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-04-23T10:51:04.730063" level="INFO">Element 'css:.oxd-alert-content-icon' is displayed.</msg>
+<arg>${ALERT_ICON}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-23T10:51:03.683331" elapsed="1.046732"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-04-23T10:51:04.731066" level="INFO">Verifying element 'css:.oxd-alert-content-text' contains exact text 'Invalid credentials'.</msg>
+<arg>${ALERT_TEXT}</arg>
+<arg>Invalid credentials</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-04-23T10:51:04.730063" elapsed="0.010361"/>
+</kw>
+<status status="PASS" start="2025-04-23T10:51:03.682147" elapsed="1.058277"/>
+</kw>
+<tag>LoginTest</tag>
+<tag>OrangeHRMSuite</tag>
+<status status="PASS" start="2025-04-23T10:51:03.239912" elapsed="1.500512"/>
+</test>
+<kw name="Close Browser Session" owner="ResourceLib" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-04-23T10:51:04.740424" elapsed="2.080303"/>
+</kw>
+<status status="PASS" start="2025-04-23T10:51:04.740424" elapsed="2.080303"/>
+</kw>
+<status status="PASS" start="2025-04-23T10:50:53.209942" elapsed="13.610785"/>
+</suite>
+<status status="PASS" start="2025-04-23T10:50:53.191987" elapsed="13.628740"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">LoginTest</stat>
+<stat pass="2" fail="0" skip="0">OrangeHRMSuite</stat>
+</tag>
+<suite>
+<stat name="TestSuites" id="s1" pass="2" fail="0" skip="0">TestSuites</stat>
+<stat name="Login-Tests" id="s1-s1" pass="2" fail="0" skip="0">TestSuites.Login-Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
